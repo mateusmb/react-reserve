@@ -1,90 +1,9 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/account.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/cart.js"],{
 
-/***/ "./components/Account/AccountHeader.js":
-/*!*********************************************!*\
-  !*** ./components/Account/AccountHeader.js ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! semantic-ui-react */ "./node_modules/semantic-ui-react/dist/es/index.js");
-var _jsxFileName = "/home/magikoopa/Dev/react-reserve/components/Account/AccountHeader.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-function AccountHeader(_ref) {
-  var role = _ref.role,
-      email = _ref.email,
-      name = _ref.name,
-      createdAt = _ref.createdAt;
-  return __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Segment"], {
-    secondary: true,
-    inverted: true,
-    color: "violet",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    },
-    __self: this
-  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Label"], {
-    color: "teal",
-    size: "large",
-    ribbon: true,
-    icon: "privacy",
-    style: {
-      textTransform: 'capitalize'
-    },
-    content: role,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    },
-    __self: this
-  }), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
-    inverted: true,
-    textAlign: "center",
-    as: "h1",
-    icon: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: this
-  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
-    name: "user",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: this
-  }), name, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"].Subheader, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: this
-  }, email), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"].Subheader, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: this
-  }, "Joined ", createdAt)));
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (AccountHeader);
-
-/***/ }),
-
-/***/ "./components/Account/AccountOrders.js":
-/*!*********************************************!*\
-  !*** ./components/Account/AccountOrders.js ***!
-  \*********************************************/
+/***/ "./components/Cart/CartItemList.js":
+/*!*****************************************!*\
+  !*** ./components/Cart/CartItemList.js ***!
+  \*****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -95,182 +14,242 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! semantic-ui-react */ "./node_modules/semantic-ui-react/dist/es/index.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/home/magikoopa/Dev/react-reserve/components/Account/AccountOrders.js";
+var _jsxFileName = "/home/magikoopa/Dev/react-reserve/components/Cart/CartItemList.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-function AccountOrders(_ref) {
-  var orders = _ref.orders;
+function CartItemList(_ref) {
+  var products = _ref.products,
+      user = _ref.user,
+      handleRemoveFromCart = _ref.handleRemoveFromCart,
+      success = _ref.success;
   var router = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["useRouter"])();
 
-  function mapOrdersToPanels(orders) {
-    return orders.map(function (order) {
+  function mapCartProductsToItems(products) {
+    return products.map(function (p) {
       return {
-        key: order._id,
-        title: {
-          content: __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Label"], {
-            color: "blue",
-            content: order.createdAt,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 11
-            },
-            __self: this
-          })
-        },
-        content: {
-          content: __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"].Header, {
-            as: "h3",
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 16
-            },
-            __self: this
-          }, "Total: $", order.total, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Label"], {
-            content: order.email,
-            icon: "mail",
-            basic: true,
-            horizontal: true,
-            style: {
-              marginLeft: '1em'
-            },
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 18
-            },
-            __self: this
-          })), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"], {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 26
-            },
-            __self: this
-          }, order.products.map(function (p) {
-            return __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"].Item, {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 28
-              },
-              __self: this
-            }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Image"], {
-              avatar: true,
-              src: p.product.mediaUrl,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 29
-              },
-              __self: this
-            }), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"].Content, {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 30
-              },
-              __self: this
-            }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"].Header, {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 31
-              },
-              __self: this
-            }, p.product.name), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"].Description, {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 34
-              },
-              __self: this
-            }, p.quantity, " \xB7 $", p.product.price)), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["List"].Content, {
-              floated: "right",
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 38
-              },
-              __self: this
-            }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Label"], {
-              tag: true,
-              color: "red",
-              size: "tiny",
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 39
-              },
-              __self: this
-            }, p.product.sku)));
-          })))
-        }
+        childKey: p.product._id,
+        header: __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Item"].Header, {
+          as: "a",
+          onClick: function onClick() {
+            return router.push("/product?_id=".concat(p.product._id));
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 11
+          },
+          __self: this
+        }, p.product.name),
+        image: p.product.mediaUrl,
+        meta: "".concat(p.quantity, " x $").concat(p.product.price),
+        fluid: "true",
+        extra: __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+          basic: true,
+          icon: "remove",
+          floated: "right",
+          onClick: function onClick() {
+            return handleRemoveFromCart(p.product._id);
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22
+          },
+          __self: this
+        })
       };
     });
   }
 
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
-    as: "h2",
+  if (success) {
+    return __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Message"], {
+      success: true,
+      header: "Success!",
+      content: "Your order and payment has been accepted",
+      icon: "star outline",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 34
+      },
+      __self: this
+    });
+  }
+
+  if (products.length === 0) {
+    return __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Segment"], {
+      secondary: true,
+      color: "teal",
+      inverted: true,
+      textAlign: "center",
+      placeholder: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 45
+      },
+      __self: this
+    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
+      icon: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 46
+      },
+      __self: this
+    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
+      name: "shopping basket",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 47
+      },
+      __self: this
+    }), "No products in your cart. Add some!"), __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 50
+      },
+      __self: this
+    }, user ? __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      color: "orange",
+      onClick: function onClick() {
+        return router.push("/");
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 52
+      },
+      __self: this
+    }, "View Products") : __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      color: "blue",
+      onClick: function onClick() {
+        return router.push("/login");
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 56
+      },
+      __self: this
+    }, "Login to Add Products")));
+  }
+
+  return __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Item"].Group, {
+    divided: true,
+    items: mapCartProductsToItems(products),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 65
     },
     __self: this
-  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
-    name: "folder open",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 54
-    },
-    __self: this
-  }), "Order History"), orders.length === 0 ? __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Segment"], {
-    inverted: true,
-    tertiary: true,
-    color: "grey",
-    textAlign: "center",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: this
-  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
-    icon: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 59
-    },
-    __self: this
-  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
-    name: "copy outline",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 60
-    },
-    __self: this
-  }), "No past orders."), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 63
-    },
-    __self: this
-  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-    onClick: function onClick() {
-      return router.push('/');
-    },
-    color: "orange",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 64
-    },
-    __self: this
-  }, "View Products"))) : __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Accordion"], {
-    fluid: true,
-    styled: true,
-    exclusive: false,
-    panels: mapOrdersToPanels(orders),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 70
-    },
-    __self: this
-  }));
+  });
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (AccountOrders);
+/* harmony default export */ __webpack_exports__["default"] = (CartItemList);
+
+/***/ }),
+
+/***/ "./components/Cart/CartSummary.js":
+/*!****************************************!*\
+  !*** ./components/Cart/CartSummary.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_stripe_checkout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-stripe-checkout */ "./node_modules/react-stripe-checkout/dist/main.js");
+/* harmony import */ var react_stripe_checkout__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_stripe_checkout__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! semantic-ui-react */ "./node_modules/semantic-ui-react/dist/es/index.js");
+/* harmony import */ var _utils_calculateCartTotal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/calculateCartTotal */ "./utils/calculateCartTotal.js");
+
+var _jsxFileName = "/home/magikoopa/Dev/react-reserve/components/Cart/CartSummary.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+
+
+function CartSummary(_ref) {
+  var products = _ref.products,
+      handleCheckout = _ref.handleCheckout,
+      success = _ref.success;
+
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_1___default.a.useState(0),
+      _React$useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$useState, 2),
+      cartAmount = _React$useState2[0],
+      setCartAmount = _React$useState2[1];
+
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_1___default.a.useState(0),
+      _React$useState4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$useState3, 2),
+      stripeAmount = _React$useState4[0],
+      setStripeAmount = _React$useState4[1];
+
+  var _React$useState5 = react__WEBPACK_IMPORTED_MODULE_1___default.a.useState(false),
+      _React$useState6 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$useState5, 2),
+      isCartEmpty = _React$useState6[0],
+      setCartEmpty = _React$useState6[1];
+
+  react__WEBPACK_IMPORTED_MODULE_1___default.a.useEffect(function () {
+    var _calculateCartTotal = Object(_utils_calculateCartTotal__WEBPACK_IMPORTED_MODULE_4__["default"])(products),
+        cartTotal = _calculateCartTotal.cartTotal,
+        stripeTotal = _calculateCartTotal.stripeTotal;
+
+    setCartAmount(cartTotal);
+    setStripeAmount(stripeTotal);
+    setCartEmpty(products.length === 0);
+  }, [products]);
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Divider"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: this
+  }), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Segment"], {
+    clearing: true,
+    size: "large",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: this
+  }, __jsx("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  }, "Sub total:"), " $", cartAmount, __jsx(react_stripe_checkout__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    name: "React Reserve",
+    amount: stripeAmount,
+    image: products.length > 0 ? products[0].product.mediaUrl : "",
+    currency: "USD",
+    shippingAddress: true,
+    billingAddres: true,
+    zipCode: true,
+    stripeKey: "pk_test_tNexYs8ff4AfXCyxYIIVuNlv002kHKEfvn",
+    token: handleCheckout,
+    triggerEvent: "onClick",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+    icon: "cart",
+    disabled: isCartEmpty || success,
+    color: "teal",
+    floated: "right",
+    content: "Checkout",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: this
+  }))));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (CartSummary);
 
 /***/ }),
 
@@ -594,6 +573,25 @@ module.exports = _createClass;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/arrayWithHoles.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/arrayWithHoles.js ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _arrayWithHoles; });
+/* harmony import */ var _core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/array/is-array */ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js");
+/* harmony import */ var _core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0__);
+
+function _arrayWithHoles(arr) {
+  if (_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0___default()(arr)) return arr;
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js":
 /*!*****************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js ***!
@@ -646,35 +644,81 @@ function _asyncToGenerator(fn) {
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js ***!
-  \********************************************************************/
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArrayLimit.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArrayLimit.js ***!
+  \*********************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _extends; });
-/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
-/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _iterableToArrayLimit; });
+/* harmony import */ var _core_js_get_iterator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/get-iterator */ "./node_modules/@babel/runtime-corejs2/core-js/get-iterator.js");
+/* harmony import */ var _core_js_get_iterator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_get_iterator__WEBPACK_IMPORTED_MODULE_0__);
 
-function _extends() {
-  _extends = _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default.a || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
+function _iterableToArrayLimit(arr, i) {
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
 
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
+  try {
+    for (var _i = _core_js_get_iterator__WEBPACK_IMPORTED_MODULE_0___default()(arr), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
     }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
 
-    return target;
-  };
+  return _arr;
+}
 
-  return _extends.apply(this, arguments);
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/nonIterableRest.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/nonIterableRest.js ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableRest; });
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance");
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _slicedToArray; });
+/* harmony import */ var _arrayWithHoles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithHoles */ "./node_modules/@babel/runtime-corejs2/helpers/esm/arrayWithHoles.js");
+/* harmony import */ var _iterableToArrayLimit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArrayLimit */ "./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArrayLimit.js");
+/* harmony import */ var _nonIterableRest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nonIterableRest */ "./node_modules/@babel/runtime-corejs2/helpers/esm/nonIterableRest.js");
+
+
+
+function _slicedToArray(arr, i) {
+  return Object(_arrayWithHoles__WEBPACK_IMPORTED_MODULE_0__["default"])(arr) || Object(_iterableToArrayLimit__WEBPACK_IMPORTED_MODULE_1__["default"])(arr, i) || Object(_nonIterableRest__WEBPACK_IMPORTED_MODULE_2__["default"])();
 }
 
 /***/ }),
@@ -7503,6 +7547,184 @@ module.exports = function isBuffer (obj) {
   return obj != null && obj.constructor != null &&
     typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/js-cookie/src/js.cookie.js":
+/*!*************************************************!*\
+  !*** ./node_modules/js-cookie/src/js.cookie.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+ * JavaScript Cookie v2.2.1
+ * https://github.com/js-cookie/js-cookie
+ *
+ * Copyright 2006, 2015 Klaus Hartl & Fagner Brack
+ * Released under the MIT license
+ */
+;(function (factory) {
+	var registeredInModuleLoader;
+	if (true) {
+		!(__WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
+				__WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		registeredInModuleLoader = true;
+	}
+	if (true) {
+		module.exports = factory();
+		registeredInModuleLoader = true;
+	}
+	if (!registeredInModuleLoader) {
+		var OldCookies = window.Cookies;
+		var api = window.Cookies = factory();
+		api.noConflict = function () {
+			window.Cookies = OldCookies;
+			return api;
+		};
+	}
+}(function () {
+	function extend () {
+		var i = 0;
+		var result = {};
+		for (; i < arguments.length; i++) {
+			var attributes = arguments[ i ];
+			for (var key in attributes) {
+				result[key] = attributes[key];
+			}
+		}
+		return result;
+	}
+
+	function decode (s) {
+		return s.replace(/(%[0-9A-Z]{2})+/g, decodeURIComponent);
+	}
+
+	function init (converter) {
+		function api() {}
+
+		function set (key, value, attributes) {
+			if (typeof document === 'undefined') {
+				return;
+			}
+
+			attributes = extend({
+				path: '/'
+			}, api.defaults, attributes);
+
+			if (typeof attributes.expires === 'number') {
+				attributes.expires = new Date(new Date() * 1 + attributes.expires * 864e+5);
+			}
+
+			// We're using "expires" because "max-age" is not supported by IE
+			attributes.expires = attributes.expires ? attributes.expires.toUTCString() : '';
+
+			try {
+				var result = JSON.stringify(value);
+				if (/^[\{\[]/.test(result)) {
+					value = result;
+				}
+			} catch (e) {}
+
+			value = converter.write ?
+				converter.write(value, key) :
+				encodeURIComponent(String(value))
+					.replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent);
+
+			key = encodeURIComponent(String(key))
+				.replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent)
+				.replace(/[\(\)]/g, escape);
+
+			var stringifiedAttributes = '';
+			for (var attributeName in attributes) {
+				if (!attributes[attributeName]) {
+					continue;
+				}
+				stringifiedAttributes += '; ' + attributeName;
+				if (attributes[attributeName] === true) {
+					continue;
+				}
+
+				// Considers RFC 6265 section 5.2:
+				// ...
+				// 3.  If the remaining unparsed-attributes contains a %x3B (";")
+				//     character:
+				// Consume the characters of the unparsed-attributes up to,
+				// not including, the first %x3B (";") character.
+				// ...
+				stringifiedAttributes += '=' + attributes[attributeName].split(';')[0];
+			}
+
+			return (document.cookie = key + '=' + value + stringifiedAttributes);
+		}
+
+		function get (key, json) {
+			if (typeof document === 'undefined') {
+				return;
+			}
+
+			var jar = {};
+			// To prevent the for loop in the first place assign an empty array
+			// in case there are no cookies at all.
+			var cookies = document.cookie ? document.cookie.split('; ') : [];
+			var i = 0;
+
+			for (; i < cookies.length; i++) {
+				var parts = cookies[i].split('=');
+				var cookie = parts.slice(1).join('=');
+
+				if (!json && cookie.charAt(0) === '"') {
+					cookie = cookie.slice(1, -1);
+				}
+
+				try {
+					var name = decode(parts[0]);
+					cookie = (converter.read || converter)(cookie, name) ||
+						decode(cookie);
+
+					if (json) {
+						try {
+							cookie = JSON.parse(cookie);
+						} catch (e) {}
+					}
+
+					jar[name] = cookie;
+
+					if (key === name) {
+						break;
+					}
+				} catch (e) {}
+			}
+
+			return key ? jar[key] : jar;
+		}
+
+		api.set = set;
+		api.get = function (key) {
+			return get(key, false /* read as raw */);
+		};
+		api.getJSON = function (key) {
+			return get(key, true /* read as json */);
+		};
+		api.remove = function (key, attributes) {
+			set(key, '', extend(attributes, {
+				expires: -1
+			}));
+		};
+
+		api.defaults = {};
+
+		api.withConverter = init;
+
+		return api;
+	}
+
+	return init(function () {});
+}));
 
 
 /***/ }),
@@ -24473,21 +24695,21 @@ exports.SUPPORTS_PERFORMANCE_USER_TIMING = exports.SUPPORTS_PERFORMANCE && typeo
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Faccount&absolutePagePath=%2Fhome%2Fmagikoopa%2FDev%2Freact-reserve%2Fpages%2Faccount.js!./":
-/*!**********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Faccount&absolutePagePath=%2Fhome%2Fmagikoopa%2FDev%2Freact-reserve%2Fpages%2Faccount.js ***!
-  \**********************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcart&absolutePagePath=%2Fhome%2Fmagikoopa%2FDev%2Freact-reserve%2Fpages%2Fcart.js!./":
+/*!****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcart&absolutePagePath=%2Fhome%2Fmagikoopa%2FDev%2Freact-reserve%2Fpages%2Fcart.js ***!
+  \****************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/account", function() {
-      var page = __webpack_require__(/*! ./pages/account.js */ "./pages/account.js")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/cart", function() {
+      var page = __webpack_require__(/*! ./pages/cart.js */ "./pages/cart.js")
       if(true) {
-        module.hot.accept(/*! ./pages/account.js */ "./pages/account.js", function() {
-          if(!next.router.components["/account"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/account.js */ "./pages/account.js")
-          next.router.update("/account", updatedPage.default || updatedPage)
+        module.hot.accept(/*! ./pages/cart.js */ "./pages/cart.js", function() {
+          if(!next.router.components["/cart"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/cart.js */ "./pages/cart.js")
+          next.router.update("/cart", updatedPage.default || updatedPage)
         })
       }
       return { page: page.default || page }
@@ -29840,6 +30062,554 @@ var safeInvoke = function safeInvoke(fn) {
     return fn.apply(void 0, args);
   }
 };
+
+/***/ }),
+
+/***/ "./node_modules/react-stripe-checkout/dist/main.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/react-stripe-checkout/dist/main.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var scriptLoading = false;
+var scriptLoaded = false;
+var scriptDidError = false;
+
+var ReactStripeCheckout = function (_React$Component) {
+  _inherits(ReactStripeCheckout, _React$Component);
+
+  function ReactStripeCheckout(props) {
+    _classCallCheck(this, ReactStripeCheckout);
+
+    var _this = _possibleConstructorReturn(this, (ReactStripeCheckout.__proto__ || Object.getPrototypeOf(ReactStripeCheckout)).call(this, props));
+
+    _this.onScriptLoaded = function () {
+      if (!ReactStripeCheckout.stripeHandler) {
+        ReactStripeCheckout.stripeHandler = StripeCheckout.configure({
+          key: _this.props.stripeKey
+        });
+        if (_this.hasPendingClick) {
+          _this.showStripeDialog();
+        }
+      }
+    };
+
+    _this.onScriptError = function () {
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this.hideLoadingDialog();
+      if (_this.props.onScriptError) {
+        _this.props.onScriptError.apply(_this, args);
+      }
+    };
+
+    _this.onClosed = function () {
+      for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        args[_key2] = arguments[_key2];
+      }
+
+      if (_this._isMounted) _this.setState({ open: false });
+      if (_this.props.closed) {
+        _this.props.closed.apply(_this, args);
+      }
+    };
+
+    _this.onOpened = function () {
+      for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+        args[_key3] = arguments[_key3];
+      }
+
+      _this.setState({ open: true });
+      if (_this.props.opened) {
+        _this.props.opened.apply(_this, args);
+      }
+    };
+
+    _this.getConfig = function () {
+      return ['token', 'image', 'name', 'description', 'amount', 'locale', 'currency', 'panelLabel', 'zipCode', 'shippingAddress', 'billingAddress', 'email', 'allowRememberMe', 'bitcoin', 'alipay', 'alipayReusable'].reduce(function (config, key) {
+        return _extends({}, config, _this.props.hasOwnProperty(key) && _defineProperty({}, key, _this.props[key]));
+      }, {
+        opened: _this.onOpened,
+        closed: _this.onClosed
+      });
+    };
+
+    _this.onClick = function () {
+      // eslint-disable-line react/sort-comp
+      if (_this.props.disabled) {
+        return;
+      }
+
+      if (scriptDidError) {
+        try {
+          throw new Error('Tried to call onClick, but StripeCheckout failed to load');
+        } catch (x) {} // eslint-disable-line no-empty
+      } else if (ReactStripeCheckout.stripeHandler) {
+        _this.showStripeDialog();
+      } else {
+        _this.showLoadingDialog();
+        _this.hasPendingClick = true;
+      }
+    };
+
+    _this.handleOnMouseDown = function () {
+      _this.setState({
+        buttonActive: true
+      });
+    };
+
+    _this.handleOnMouseUp = function () {
+      _this.setState({
+        buttonActive: false
+      });
+    };
+
+    _this.state = {
+      open: false,
+      buttonActive: false
+    };
+    return _this;
+  }
+
+  _createClass(ReactStripeCheckout, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      this._isMounted = true;
+      if (scriptLoaded) {
+        return;
+      }
+
+      if (scriptLoading) {
+        return;
+      }
+
+      scriptLoading = true;
+
+      var script = document.createElement('script');
+      if (typeof this.props.onScriptTagCreated === 'function') {
+        this.props.onScriptTagCreated(script);
+      }
+
+      script.src = 'https://checkout.stripe.com/checkout.js';
+      script.async = 1;
+
+      this.loadPromise = function () {
+        var canceled = false;
+        var promise = new Promise(function (resolve, reject) {
+          script.onload = function () {
+            scriptLoaded = true;
+            scriptLoading = false;
+            resolve();
+            _this2.onScriptLoaded();
+          };
+          script.onerror = function (event) {
+            scriptDidError = true;
+            scriptLoading = false;
+            reject(event);
+            _this2.onScriptError(event);
+          };
+        });
+        var wrappedPromise = new Promise(function (accept, cancel) {
+          promise.then(function () {
+            return canceled ? cancel({ isCanceled: true }) : accept();
+          }); // eslint-disable-line no-confusing-arrow
+          promise.catch(function (error) {
+            return canceled ? cancel({ isCanceled: true }) : cancel(error);
+          }); // eslint-disable-line no-confusing-arrow
+        });
+
+        return {
+          promise: wrappedPromise,
+          cancel: function cancel() {
+            canceled = true;
+          }
+        };
+      }();
+
+      this.loadPromise.promise.then(this.onScriptLoaded).catch(this.onScriptError);
+
+      document.body.appendChild(script);
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      if (!scriptLoading) {
+        this.updateStripeHandler();
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this._isMounted = false;
+      if (this.loadPromise) {
+        this.loadPromise.cancel();
+      }
+      if (ReactStripeCheckout.stripeHandler && this.state.open) {
+        ReactStripeCheckout.stripeHandler.close();
+      }
+    }
+  }, {
+    key: 'updateStripeHandler',
+    value: function updateStripeHandler() {
+      if (!ReactStripeCheckout.stripeHandler || this.props.reconfigureOnUpdate) {
+        ReactStripeCheckout.stripeHandler = StripeCheckout.configure({
+          key: this.props.stripeKey
+        });
+      }
+    }
+  }, {
+    key: 'showLoadingDialog',
+    value: function showLoadingDialog() {
+      if (this.props.showLoadingDialog) {
+        for (var _len4 = arguments.length, args = Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+          args[_key4] = arguments[_key4];
+        }
+
+        this.props.showLoadingDialog.apply(this, args);
+      }
+    }
+  }, {
+    key: 'hideLoadingDialog',
+    value: function hideLoadingDialog() {
+      if (this.props.hideLoadingDialog) {
+        for (var _len5 = arguments.length, args = Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
+          args[_key5] = arguments[_key5];
+        }
+
+        this.props.hideLoadingDialog.apply(this, args);
+      }
+    }
+  }, {
+    key: 'showStripeDialog',
+    value: function showStripeDialog() {
+      this.hideLoadingDialog();
+      ReactStripeCheckout.stripeHandler.open(this.getConfig());
+    }
+  }, {
+    key: 'renderDefaultStripeButton',
+    value: function renderDefaultStripeButton() {
+      return _react2.default.createElement(
+        'button',
+        _extends({}, _defineProperty({}, this.props.triggerEvent, this.onClick), {
+          className: this.props.className,
+          onMouseDown: this.handleOnMouseDown,
+          onFocus: this.handleOnMouseDown,
+          onMouseUp: this.handleOnMouseUp,
+          onMouseOut: this.handleOnMouseUp,
+          onBlur: this.handleOnMouseUp,
+          style: _extends({}, {
+            overflow: 'hidden',
+            display: 'inline-block',
+            background: 'linear-gradient(#28a0e5,#015e94)',
+            border: 0,
+            padding: 1,
+            textDecoration: 'none',
+            borderRadius: 5,
+            boxShadow: '0 1px 0 rgba(0,0,0,0.2)',
+            cursor: 'pointer',
+            visibility: 'visible',
+            userSelect: 'none'
+          }, this.state.buttonActive && {
+            background: '#005d93'
+          }, this.props.style)
+        }),
+        _react2.default.createElement(
+          'span',
+          {
+            style: _extends({}, {
+              backgroundImage: 'linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4)',
+              fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
+              fontSize: 14,
+              position: 'relative',
+              padding: '0 12px',
+              display: 'block',
+              height: 30,
+              lineHeight: '30px',
+              color: '#fff',
+              fontWeight: 'bold',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.25)',
+              textShadow: '0 -1px 0 rgba(0,0,0,0.25)',
+              borderRadius: 4
+            }, this.state.buttonActive && {
+              color: '#eee',
+              boxShadow: 'inset 0 1px 0 rgba(0,0,0,0.1)',
+              backgroundImage: 'linear-gradient(#008cdd,#008cdd 85%,#239adf)'
+            }, this.props.textStyle)
+          },
+          this.props.label
+        )
+      );
+    }
+  }, {
+    key: 'renderDisabledButton',
+    value: function renderDisabledButton() {
+      return _react2.default.createElement(
+        'button',
+        {
+          disabled: true,
+          style: {
+            background: 'rgba(0,0,0,0.2)',
+            overflow: 'hidden',
+            display: 'inline-block',
+            border: 0,
+            padding: 1,
+            textDecoration: 'none',
+            borderRadius: 5,
+            userSelect: 'none'
+          }
+        },
+        _react2.default.createElement(
+          'span',
+          {
+            style: {
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.25)',
+              fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
+              fontSize: 14,
+              position: 'relative',
+              padding: '0 12px',
+              display: 'block',
+              height: 30,
+              lineHeight: '30px',
+              borderRadius: 4,
+              color: '#999',
+              background: '#f8f9fa',
+              textShadow: '0 1px 0 rgba(255,255,255,0.5)'
+            }
+          },
+          this.props.label
+        )
+      );
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      if (this.props.desktopShowModal === true && !this.state.open) {
+        this.onClick();
+      } else if (this.props.desktopShowModal === false && this.state.open) {
+        ReactStripeCheckout.stripeHandler.close();
+      }
+
+      var ComponentClass = this.props.ComponentClass;
+
+      if (this.props.children) {
+        return _react2.default.createElement(ComponentClass, _extends({}, _defineProperty({}, this.props.triggerEvent, this.onClick), {
+          children: this.props.children
+        }));
+      }
+      return this.props.disabled ? this.renderDisabledButton() : this.renderDefaultStripeButton();
+    }
+  }]);
+
+  return ReactStripeCheckout;
+}(_react2.default.Component);
+
+ReactStripeCheckout.defaultProps = {
+  className: 'StripeCheckout',
+  label: 'Pay With Card',
+  locale: 'auto',
+  ComponentClass: 'span',
+  reconfigureOnUpdate: false,
+  triggerEvent: 'onClick'
+};
+ReactStripeCheckout.propTypes = {
+  // Opens / closes the checkout modal by value
+  // WARNING: does not work on mobile due to browser security restrictions
+  // NOTE: Must be set to false when receiving token to prevent modal from
+  //       opening automatically after closing
+  desktopShowModal: _propTypes2.default.bool,
+
+  triggerEvent: _propTypes2.default.oneOf(['onClick', 'onTouchTap', 'onTouchStart']),
+
+  // If included, will render the default blue button with label text.
+  // (Requires including stripe-checkout.css or adding the .styl file
+  // to your pipeline)
+  label: _propTypes2.default.string,
+
+  // Custom styling for default button
+  style: _propTypes2.default.object,
+  // Custom styling for <span> tag inside default button
+  textStyle: _propTypes2.default.object,
+
+  // Prevents any events from opening the popup
+  // Adds the disabled prop to the button and adjusts the styling as well
+  disabled: _propTypes2.default.bool,
+
+  // Named component to wrap button (eg. div)
+  ComponentClass: _propTypes2.default.string,
+
+  // Show a loading indicator
+  showLoadingDialog: _propTypes2.default.func,
+  // Hide the loading indicator
+  hideLoadingDialog: _propTypes2.default.func,
+
+  // Run this method when the scrupt fails to load. Will run if the internet
+  // connection is offline when attemting to load the script.
+  onScriptError: _propTypes2.default.func,
+
+  // Runs when the script tag is created, but before it is added to the DOM
+  onScriptTagCreated: _propTypes2.default.func,
+
+  // By default, any time the React component is updated, it will call
+  // StripeCheckout.configure, which may result in additional XHR calls to the
+  // stripe API.  If you know the first configuration is all you need, you
+  // can set this to false.  Subsequent updates will affect the StripeCheckout.open
+  // (e.g. different prices)
+  reconfigureOnUpdate: _propTypes2.default.bool,
+
+  // =====================================================
+  // Required by stripe
+  // see Stripe docs for more info:
+  //   https://stripe.com/docs/checkout#integration-custom
+  // =====================================================
+
+  // Your publishable key (test or live).
+  // can't use "key" as a prop in react, so have to change the keyname
+  stripeKey: _propTypes2.default.string.isRequired,
+
+  // The callback to invoke when the Checkout process is complete.
+  //   function(token)
+  //     token is the token object created.
+  //     token.id can be used to create a charge or customer.
+  //     token.email contains the email address entered by the user.
+  token: _propTypes2.default.func.isRequired,
+
+  // ==========================
+  // Highly Recommended Options
+  // ==========================
+
+  // Name of the company or website.
+  name: _propTypes2.default.string,
+
+  // A description of the product or service being purchased.
+  description: _propTypes2.default.string,
+
+  // A relative URL pointing to a square image of your brand or product. The
+  // recommended minimum size is 128x128px. The recommended image types are
+  // .gif, .jpeg, and .png.
+  image: _propTypes2.default.string,
+
+  // The amount (in cents) that's shown to the user. Note that you will still
+  // have to explicitly include it when you create a charge using the API.
+  amount: _propTypes2.default.number,
+
+  // Specify auto to display Checkout in the user's preferred language, if
+  // available. English will be used by default.
+  //
+  // https://stripe.com/docs/checkout#supported-languages
+  // for more info.
+  locale: _propTypes2.default.oneOf(['auto', // (Default) Automatically chosen by checkout
+  'zh', // Simplified Chinese
+  'da', // Danish
+  'nl', // Dutch
+  'en', // English
+  'fr', // French
+  'de', // German
+  'it', // Italian
+  'ja', // Japanease
+  'no', // Norwegian
+  'es', // Spanish
+  'sv']),
+
+  // ==============
+  // Optional Props
+  // ==============
+
+  // The currency of the amount (3-letter ISO code). The default is USD.
+  currency: _propTypes2.default.oneOf(['AED', 'AFN', 'ALL', 'AMD', 'ANG', 'AOA', 'ARS', 'AUD', 'AWG', 'AZN', 'BAM', 'BBD', // eslint-disable-line comma-spacing
+  'BDT', 'BGN', 'BIF', 'BMD', 'BND', 'BOB', 'BRL', 'BSD', 'BWP', 'BZD', 'CAD', 'CDF', // eslint-disable-line comma-spacing
+  'CHF', 'CLP', 'CNY', 'COP', 'CRC', 'CVE', 'CZK', 'DJF', 'DKK', 'DOP', 'DZD', 'EEK', // eslint-disable-line comma-spacing
+  'EGP', 'ETB', 'EUR', 'FJD', 'FKP', 'GBP', 'GEL', 'GIP', 'GMD', 'GNF', 'GTQ', 'GYD', // eslint-disable-line comma-spacing
+  'HKD', 'HNL', 'HRK', 'HTG', 'HUF', 'IDR', 'ILS', 'INR', 'ISK', 'JMD', 'JPY', 'KES', // eslint-disable-line comma-spacing
+  'KGS', 'KHR', 'KMF', 'KRW', 'KYD', 'KZT', 'LAK', 'LBP', 'LKR', 'LRD', 'LSL', 'LTL', // eslint-disable-line comma-spacing
+  'LVL', 'MAD', 'MDL', 'MGA', 'MKD', 'MNT', 'MOP', 'MRO', 'MUR', 'MVR', 'MWK', 'MXN', // eslint-disable-line comma-spacing
+  'MYR', 'MZN', 'NAD', 'NGN', 'NIO', 'NOK', 'NPR', 'NZD', 'PAB', 'PEN', 'PGK', 'PHP', // eslint-disable-line comma-spacing
+  'PKR', 'PLN', 'PYG', 'QAR', 'RON', 'RSD', 'RUB', 'RWF', 'SAR', 'SBD', 'SCR', 'SEK', // eslint-disable-line comma-spacing
+  'SGD', 'SHP', 'SLL', 'SOS', 'SRD', 'STD', 'SVC', 'SZL', 'THB', 'TJS', 'TOP', 'TRY', // eslint-disable-line comma-spacing
+  'TTD', 'TWD', 'TZS', 'UAH', 'UGX', 'USD', 'UYU', 'UZS', 'VND', 'VUV', 'WST', 'XAF', // eslint-disable-line comma-spacing
+  'XCD', 'XOF', 'XPF', 'YER', 'ZAR', 'ZMW']),
+
+  // The label of the payment button in the Checkout form (e.g. “Subscribe”,
+  // “Pay {{amount}}”, etc.). If you include {{amount}}, it will be replaced
+  // by the provided amount. Otherwise, the amount will be appended to the
+  // end of your label.
+  panelLabel: _propTypes2.default.string,
+
+  // Specify whether Checkout should validate the billing ZIP code (true or
+  // false)
+  zipCode: _propTypes2.default.bool,
+
+  // Specify whether Checkout should collect the user's billing address
+  // (true or false). The default is false.
+  billingAddress: _propTypes2.default.bool,
+
+  // Specify whether Checkout should collect the user's shipping address
+  // (true or false). The default is false.
+  shippingAddress: _propTypes2.default.bool,
+
+  // Specify whether Checkout should validate the billing ZIP code (true or
+  // false). The default is false.
+  email: _propTypes2.default.string,
+
+  // Specify whether to include the option to "Remember Me" for future
+  // purchases (true or false). The default is true.
+  allowRememberMe: _propTypes2.default.bool,
+
+  // Specify whether to accept Bitcoin in Checkout. The default is false.
+  bitcoin: _propTypes2.default.bool,
+
+  // Specify whether to accept Alipay ('auto', true, or false). The default
+  // is false.
+  alipay: _propTypes2.default.oneOf(['auto', true, false]),
+
+  // Specify if you need reusable access to the customer's Alipay account
+  // (true or false). The default is false.
+  alipayReusable: _propTypes2.default.bool,
+
+  // function() The callback to invoke when Checkout is opened (not supported
+  // in IE6 and IE7).
+  opened: _propTypes2.default.func,
+
+  // function() The callback to invoke when Checkout is closed (not supported
+  // in IE6 and IE7).
+  closed: _propTypes2.default.func
+};
+ReactStripeCheckout._isMounted = false;
+exports.default = ReactStripeCheckout;
+
 
 /***/ }),
 
@@ -58560,10 +59330,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./pages/account.js":
-/*!**************************!*\
-  !*** ./pages/account.js ***!
-  \**************************/
+/***/ "./pages/cart.js":
+/*!***********************!*\
+  !*** ./pages/cart.js ***!
+  \***********************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -58572,21 +59342,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_Account_AccountHeader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Account/AccountHeader */ "./components/Account/AccountHeader.js");
-/* harmony import */ var _components_Account_AccountOrders__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Account/AccountOrders */ "./components/Account/AccountOrders.js");
-/* harmony import */ var nookies__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! nookies */ "./node_modules/nookies/dist/index.js");
-/* harmony import */ var nookies__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(nookies__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _utils_baseUrl__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../utils/baseUrl */ "./utils/baseUrl.js");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! semantic-ui-react */ "./node_modules/semantic-ui-react/dist/es/index.js");
+/* harmony import */ var _components_Cart_CartItemList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Cart/CartItemList */ "./components/Cart/CartItemList.js");
+/* harmony import */ var _components_Cart_CartSummary__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Cart/CartSummary */ "./components/Cart/CartSummary.js");
+/* harmony import */ var nookies__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! nookies */ "./node_modules/nookies/dist/index.js");
+/* harmony import */ var nookies__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(nookies__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/src/js.cookie.js");
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _utils_baseUrl__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../utils/baseUrl */ "./utils/baseUrl.js");
+/* harmony import */ var _utils_catchErrors__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/catchErrors */ "./utils/catchErrors.js");
 
 
 
-var _jsxFileName = "/home/magikoopa/Dev/react-reserve/pages/account.js";
-
+var _jsxFileName = "/home/magikoopa/Dev/react-reserve/pages/cart.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 
 
@@ -58594,76 +59367,204 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 
 
 
-function Account(_ref) {
-  var user = _ref.user,
-      orders = _ref.orders;
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_3___default.a.Fragment, null, __jsx(_components_Account_AccountHeader__WEBPACK_IMPORTED_MODULE_4__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, user, {
+
+
+
+
+function Cart(_ref) {
+  var products = _ref.products,
+      user = _ref.user;
+
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState(products),
+      _React$useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_React$useState, 2),
+      cartProducts = _React$useState2[0],
+      setCartProducts = _React$useState2[1];
+
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState(false),
+      _React$useState4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_React$useState3, 2),
+      success = _React$useState4[0],
+      setSuccess = _React$useState4[1];
+
+  var _React$useState5 = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState(false),
+      _React$useState6 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_React$useState5, 2),
+      loading = _React$useState6[0],
+      setLoading = _React$useState6[1];
+
+  function handleRemoveFromCart(_x) {
+    return _handleRemoveFromCart.apply(this, arguments);
+  }
+
+  function _handleRemoveFromCart() {
+    _handleRemoveFromCart = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+    /*#__PURE__*/
+    _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(productId) {
+      var url, token, payload, response;
+      return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              url = "".concat(_utils_baseUrl__WEBPACK_IMPORTED_MODULE_10__["default"], "/api/cart");
+              token = js_cookie__WEBPACK_IMPORTED_MODULE_9___default.a.get("token");
+              payload = {
+                params: {
+                  productId: productId
+                },
+                headers: {
+                  Authorization: token
+                }
+              };
+              _context.next = 5;
+              return axios__WEBPACK_IMPORTED_MODULE_8___default.a["delete"](url, payload);
+
+            case 5:
+              response = _context.sent;
+              setCartProducts(response.data);
+
+            case 7:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+    return _handleRemoveFromCart.apply(this, arguments);
+  }
+
+  function handleCheckout(_x2) {
+    return _handleCheckout.apply(this, arguments);
+  }
+
+  function _handleCheckout() {
+    _handleCheckout = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+    /*#__PURE__*/
+    _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(paymentData) {
+      var url, token, payload, headers;
+      return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.prev = 0;
+              setLoading(true);
+              url = "".concat(_utils_baseUrl__WEBPACK_IMPORTED_MODULE_10__["default"], "/api/checkout");
+              token = js_cookie__WEBPACK_IMPORTED_MODULE_9___default.a.get("token");
+              payload = {
+                paymentData: paymentData
+              };
+              headers = {
+                headers: {
+                  Authorization: token
+                }
+              };
+              _context2.next = 8;
+              return axios__WEBPACK_IMPORTED_MODULE_8___default.a.post(url, payload, headers);
+
+            case 8:
+              setSuccess(true);
+              _context2.next = 14;
+              break;
+
+            case 11:
+              _context2.prev = 11;
+              _context2.t0 = _context2["catch"](0);
+              Object(_utils_catchErrors__WEBPACK_IMPORTED_MODULE_11__["default"])(_context2.t0, window.alert);
+
+            case 14:
+              _context2.prev = 14;
+              setLoading(false);
+              return _context2.finish(14);
+
+            case 17:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[0, 11, 14, 17]]);
+    }));
+    return _handleCheckout.apply(this, arguments);
+  }
+
+  return __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Segment"], {
+    loading: loading,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 44
     },
     __self: this
-  })), __jsx(_components_Account_AccountOrders__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    orders: orders,
+  }, __jsx(_components_Cart_CartItemList__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    handleRemoveFromCart: handleRemoveFromCart,
+    user: user,
+    products: cartProducts,
+    success: success,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 45
+    },
+    __self: this
+  }), __jsx(_components_Cart_CartSummary__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    products: cartProducts,
+    handleCheckout: handleCheckout,
+    success: success,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
     },
     __self: this
   }));
 }
 
-Account.getInitialProps =
+Cart.getInitialProps =
 /*#__PURE__*/
 function () {
   var _ref2 = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
   /*#__PURE__*/
-  _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(ctx) {
-    var _parseCookies, token, payload, url, response;
+  _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(ctx) {
+    var _parseCookies, token, url, payload, response;
 
-    return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+    return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
       while (1) {
-        switch (_context.prev = _context.next) {
+        switch (_context3.prev = _context3.next) {
           case 0:
-            _parseCookies = Object(nookies__WEBPACK_IMPORTED_MODULE_6__["parseCookies"])(ctx), token = _parseCookies.token;
+            _parseCookies = Object(nookies__WEBPACK_IMPORTED_MODULE_7__["parseCookies"])(ctx), token = _parseCookies.token;
 
             if (token) {
-              _context.next = 3;
+              _context3.next = 3;
               break;
             }
 
-            return _context.abrupt("return", {
-              orders: []
+            return _context3.abrupt("return", {
+              products: []
             });
 
           case 3:
+            url = "".concat(_utils_baseUrl__WEBPACK_IMPORTED_MODULE_10__["default"], "/api/cart");
             payload = {
               headers: {
                 Authorization: token
               }
             };
-            url = "".concat(_utils_baseUrl__WEBPACK_IMPORTED_MODULE_7__["default"], "/api/orders");
-            _context.next = 7;
+            _context3.next = 7;
             return axios__WEBPACK_IMPORTED_MODULE_8___default.a.get(url, payload);
 
           case 7:
-            response = _context.sent;
-            return _context.abrupt("return", response.data);
+            response = _context3.sent;
+            return _context3.abrupt("return", {
+              products: response.data
+            });
 
           case 9:
           case "end":
-            return _context.stop();
+            return _context3.stop();
         }
       }
-    }, _callee);
+    }, _callee3);
   }));
 
-  return function (_x) {
+  return function (_x3) {
     return _ref2.apply(this, arguments);
   };
 }();
 
-/* harmony default export */ __webpack_exports__["default"] = (Account);
+/* harmony default export */ __webpack_exports__["default"] = (Cart);
 
 /***/ }),
 
@@ -58681,14 +59582,77 @@ var baseUrl =  false ? undefined : "http://localhost:3000";
 
 /***/ }),
 
+/***/ "./utils/calculateCartTotal.js":
+/*!*************************************!*\
+  !*** ./utils/calculateCartTotal.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function calculateCartTotal(products) {
+  var total = products.reduce(function (acc, el) {
+    acc += el.product.price * el.quantity;
+    return acc;
+  }, 0);
+  var cartTotal = (total * 100 / 100).toFixed(2);
+  var stripeTotal = Number((total * 100).toFixed(2));
+  return {
+    cartTotal: cartTotal,
+    stripeTotal: stripeTotal
+  };
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (calculateCartTotal);
+
+/***/ }),
+
+/***/ "./utils/catchErrors.js":
+/*!******************************!*\
+  !*** ./utils/catchErrors.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function catchErrors(error, displayError) {
+  var errorMsg;
+
+  if (error.response) {
+    // The request was made and the server responsed with a status code that is not in the range of 2XX
+    errorMsg = error.response.data;
+    console.error("Error response", errorMsg); // For Cloudinary image uploads
+
+    if (error.response.data.error) {
+      errorMsg = error.response.data.error.message;
+    }
+  } else if (error.request) {
+    // The request was made, but no response was received
+    errorMsg = error.request;
+    console.error("Error request", errorMsg);
+  } else {
+    // Something else happened in making the request that triggered an error
+    errorMsg = error.message;
+    console.error("Error message", errorMsg);
+  }
+
+  displayError(errorMsg);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (catchErrors);
+
+/***/ }),
+
 /***/ 0:
-/*!**************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Faccount&absolutePagePath=%2Fhome%2Fmagikoopa%2FDev%2Freact-reserve%2Fpages%2Faccount.js ***!
-  \**************************************************************************************************************************************/
+/*!********************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fcart&absolutePagePath=%2Fhome%2Fmagikoopa%2FDev%2Freact-reserve%2Fpages%2Fcart.js ***!
+  \********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Faccount&absolutePagePath=%2Fhome%2Fmagikoopa%2FDev%2Freact-reserve%2Fpages%2Faccount.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Faccount&absolutePagePath=%2Fhome%2Fmagikoopa%2FDev%2Freact-reserve%2Fpages%2Faccount.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fcart&absolutePagePath=%2Fhome%2Fmagikoopa%2FDev%2Freact-reserve%2Fpages%2Fcart.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcart&absolutePagePath=%2Fhome%2Fmagikoopa%2FDev%2Freact-reserve%2Fpages%2Fcart.js!./");
 
 
 /***/ }),
@@ -58705,4 +59669,4 @@ module.exports = dll_129a35c7ec57967eb265;
 /***/ })
 
 },[[0,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=account.js.map
+//# sourceMappingURL=cart.js.map

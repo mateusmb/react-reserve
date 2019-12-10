@@ -57923,7 +57923,7 @@ var baseUrl =  false ? undefined : "http://localhost:3000";
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!*****************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fmagikoopa%2FDev%2Freact-reserve%2Fpages%2Findex.js ***!
   \*****************************************************************************************************************************/
@@ -57946,5 +57946,5 @@ module.exports = dll_129a35c7ec57967eb265;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
