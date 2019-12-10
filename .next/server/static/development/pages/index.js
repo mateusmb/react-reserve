@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -179,7 +179,7 @@ function ProductPagination({
     },
     __self: this
   }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Pagination"], {
-    defaultActivePAge: 1,
+    defaultActivePage: 1,
     totalPages: totalPages,
     onPageChange: (event, data) => {
       data.activePage === 1 ? router.push('/') : router.push(`/?page=${data.activePage}`);
@@ -275,7 +275,7 @@ const baseUrl =  false ? undefined : "http://localhost:3000";
 
 /***/ }),
 
-/***/ 3:
+/***/ 7:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

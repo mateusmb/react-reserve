@@ -7,7 +7,7 @@ function ProductPagination({ totalPages }) {
   return (
     <Container textAlign="center" style={{ margin: '2em' }}>
       <Pagination
-        defaultActivePAge={1}
+        defaultActivePage={1}
         totalPages={totalPages}
         onPageChange={(event, data) => {
           data.activePage === 1
